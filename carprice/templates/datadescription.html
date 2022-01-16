@@ -1,0 +1,190 @@
+{% load static %}
+<!DOCTYPE Html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>EDA</title>
+	<style>
+
+            .accordion {
+            background-color: rgba(14, 14, 14, 1);
+            color: cyan;
+            cursor: pointer;
+            padding: 18px;
+            width: 300px;
+            border: none;
+            text-align: center;
+            outline: none;
+            font-size: 15px;
+            transition: 0.4s;
+          }
+
+
+          .img{
+            width:700px;
+          }
+          .panel {
+            padding: 0 18px;
+            margin-top: 20px;
+            margin-bottom: 20px;
+            background-color: white;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.2s ease-out;
+          }
+		p.hell{
+margin-top: 15px;
+margin-right: 15px;
+font-size:20px;
+  color:white;
+}
+		  .active{background-color: red;
+  color: white;
+		  }
+
+	</style>
+
+	<link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+</head>
+<body>
+
+	<div class="full-page">
+		<section class="topnav">
+		<a><img src="{% static 'Rvlogo.png' %}" class="logo"> </a>
+		<center><p class="p"> Department of MCA <br>
+		RV College of Engineering&reg; <p></center>
+			<a href='/'><img src="{% static 'cars1.png' %}" class="logo1"></a></section><br>
+
+<center>
+ <h2 style=" color: #fff;">Data Description</h2>
+
+
+          <button class="accordion">10 features in the Dataset</button>
+          <div class="panel">
+            <img src="{% static 'df_styled.png' %}" class="img">
+          </div>
+
+          <button class="accordion">Categorical Features</button>
+          <div class="panel">
+            <table>
+  <tr>
+    <th>Seller_Type</th>
+    <th>Transmission</th>
+    <th>Owner</th>
+    <th>Fuel_Type</th>
+    <th>Color</th>
+    <th>Car_Brand</th>
+  </tr>
+  <tr>
+    <td>Dealer</td>
+    <td>Manual</td>
+    <td>0</td>
+    <td>Petrol</td>
+    <td>Red</td>
+    <td>MarutiSuzuki</td>
+  </tr>
+  <tr>
+    <td>Individual</td>
+    <td>Automatic</td>
+    <td>1</td>
+    <td>Diesel</td>
+    <td>Silver</td>
+    <td>Mahindra</td>
+  </tr>
+    <tr>
+    <td></td>
+    <td></td>
+    <td>3</td>
+    <td>CNG</td>
+    <td>White</td>
+    <td>Toyota</td>
+  </tr>
+    <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td>Black</td>
+    <td>Hyundai</td>
+  </tr>
+    <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td>Kia</td>
+  </tr>
+</table>
+          </div>
+
+          <button class="accordion">Null value</button>
+          <div class="panel">
+
+      <table class="hiv">
+          <tr>
+    <th>Data </th>
+    <th>Null Values</th>
+  </tr>
+  <tr>
+    <td>Car_Brand</td>
+     <td>0</td>
+  </tr>
+        <tr>
+    <td>Color</td>
+           <td>0</td>
+        </tr>
+        <tr>
+    <td>Year</td>
+          <td>0</td>
+          </tr>
+        <tr>
+    <td>Selling_Price</td>
+          <td>0</td>
+        </tr>
+        <tr>
+    <td>Present_Price</td>
+          <td>0</td>
+        </tr>
+        <tr>
+    <td>Kms_Driven</td>
+          <td>0</td>
+        </tr>
+        <tr>
+          <td>Fuel_Type</td><td>0</td></tr>
+   <tr> <td>Seller_Type</td><td>0</td></tr>
+  <tr>  <td>Transmission</td><td>0</td></tr>
+  <tr>  <td>Owner</td><td>0</td></tr>
+
+      </table>
+          </div>
+
+
+
+	</div>
+
+          <script>
+          var acc = document.getElementsByClassName("accordion");
+          var i;
+
+          for (i = 0; i < acc.length; i++) {
+            acc[i].addEventListener("click", function() {
+              this.classList.toggle("active");
+              var panel = this.nextElementSibling;
+              if (panel.style.maxHeight) {
+                panel.style.maxHeight = null;
+              } else {
+                panel.style.maxHeight = panel.scrollHeight + "px";
+              }
+            });
+          }
+          </script>
+	</center>
+
+<div class="footer">
+  <p>&copy; Developed by Prateek Shetty-1RD19MCA02 and Gourab Kundu -1RV19MCA29 <br>IV Semester</p>
+</div>
+		</div>
+
+</body>
+</html>
